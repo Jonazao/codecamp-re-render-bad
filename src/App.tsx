@@ -1,3 +1,4 @@
+import React, {useMemo} from "react";
 import "./styles.css";
 import { Page } from "./country-settings/page";
 import { rawCountries } from "./raw-data";
@@ -18,9 +19,11 @@ const getCountriesFromRawData = (raw: any[]): Country[] => {
 };
 
 export default function App() {
+  const allCountries= useMemo(()=> getCountriesFromRawData(rawCountries),[rawCountries])
+
   return (
     <div className="App">
-      <Page countries={getCountriesFromRawData(rawCountries)} />
+      <Page countries={allCountries} />
     </div>
   );
 }

@@ -1,4 +1,3 @@
-import React from "react";
 import { Country } from "./types";
 
 export const SelectedCountry = ({
@@ -28,4 +27,4 @@ export const SelectedCountry = ({
       <img src={country.flagUrl} className="selected-flag" alt={country.name} />
     </div>
   );
-};
+}
